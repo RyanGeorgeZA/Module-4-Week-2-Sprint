@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Clickjack victim page</title>
+        <style>
+            input {
+                width:80px;
+                height: 30px;
+                margin: 23px 0 0 65px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <input type="button" value="Buy" onclick="send()">
+
+        <script>
+            // function AmznBuy {
+            //     alert("Item bought on Amazon.com");
+            // }
+
+            function send() {
+            window.parent.postMessage('Item bought on Amazon', '*');
+        }
+        </script>
+    </body>
+</html>
